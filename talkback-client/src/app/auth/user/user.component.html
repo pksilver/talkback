@@ -1,0 +1,96 @@
+<div class="col-md-4">
+<!-- <div class="container"> -->
+    <div class="formcard panel-group">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h2 class="panel-title custom-panel-title text-center">
+            Add User
+          </h2>
+        </div>
+        <form #addUserForm="ngForm" (ngSubmit)="onSubmit(addUserForm)" >
+          <div class="panel-body custom-panel-body">
+                
+              <div class="form-group">
+                  <label for="name">Name : </label>
+                  <input type="text" class="form-control" name="fname" #uname="ngModel" [ngModel]="name">
+                </div>
+                <div class="form-group">
+                  <label for="name">Age : </label>
+                  <input type="text" class="form-control" name="fage" #uage="ngModel" [ngModel]="age">
+                </div>
+                <div class="form-group">
+                  <label for="name">Email : </label>
+                  <input type="text" class="form-control" name="femail" #uemail="ngModel" [ngModel]="email">
+                </div>
+                <div class="form-group">
+                  <label for="name">Street : </label>
+                  <input type="text" class="form-control" name="fstreet" #ustreet="ngModel" [ngModel]="address.street">
+                </div>
+                <div class="form-group">
+                  <label for="name">City : </label>
+                  <input type="text" class="form-control" name="fcity" #ucity="ngModel" [ngModel]="address.city">
+                </div>
+                <div class="form-group">
+                  <label for="name">State : </label>
+                  <input type="text" class="form-control" name="fstate" #ustate="ngModel" [ngModel]="address.state">
+                </div>
+                  
+          </div>
+          <div class="form-group">
+              <button type="submit" [disabled]="addUserForm.pristine" class="btn btn-success btn-block btn-md buttom-style waves-effect text-center m-b-20">Add User</button>
+            </div>
+        </form>
+      </div>
+    </div>
+  <!-- </div> -->
+  </div>
+<div class="col-md-8">
+<div class="card panel-group" *ngFor="let user of users; let i=index">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" href="#collapse{{i+1}}" style="display: block;text-decoration: none;">{{ user.fname }}</a>
+      </h4>
+    </div>
+    <div id="collapse{{i+1}}" class="panel-collapse collapse">
+      <div class="panel-body">
+        <p>{{ user.fage }}</p> 
+        <p>{{ user.femail }}</p> 
+        <p>{{ user.fstreet }}, {{ user.fcity }}, {{ user.fstate }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- <div class="container">
+  <form #addUserForm="ngForm" (ngSubmit)="onSubmit(addUserForm)" >
+    <div class="form-group">
+      <label for="name">Name : </label>
+      <input type="text" class="form-control" name="fname" #uname="ngModel" [ngModel]="name">
+    </div>
+    <div class="form-group">
+      <label for="name">Age : </label>
+      <input type="text" class="form-control" name="fage" #uage="ngModel" [ngModel]="age">
+    </div>
+    <div class="form-group">
+      <label for="name">Email : </label>
+      <input type="text" class="form-control" name="femail" #uemail="ngModel" [ngModel]="email">
+    </div>
+    <div class="form-group">
+      <label for="name">Street : </label>
+      <input type="text" class="form-control" name="fstreet" #ustreet="ngModel" [ngModel]="address.street">
+    </div>
+    <div class="form-group">
+      <label for="name">City : </label>
+      <input type="text" class="form-control" name="fcity" #ucity="ngModel" [ngModel]="address.city">
+    </div>
+    <div class="form-group">
+      <label for="name">State : </label>
+      <input type="text" class="form-control" name="fstate" #ustate="ngModel" [ngModel]="address.state">
+    </div>
+    <div class="form-group">
+      <button type="submit" [disabled]="addUserForm.pristine" class="btn btn-success btn-md btn-block waves-effect text-center m-b-20">Add User</button>
+    </div>
+  </form>
+</div> -->

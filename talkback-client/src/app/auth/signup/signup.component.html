@@ -1,0 +1,49 @@
+<h1 style="text-align: center;margin-bottom: 2%;margin-top: 1%;">Welcome to {{ title }}</h1>
+<div class="col-md-12">
+<div class="container">
+  <div class="card panel-group">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h2 class="panel-title custom-panel-title text-center">
+          Signup
+        </h2>
+      </div>
+      <form #signupForm="ngForm" (ngSubmit)="onSubmit(signupForm)" >
+        <div class="panel-body custom-panel-body">
+              
+            <div class="form-group">
+                <label for="name">Name : </label>
+                <input type="text" class="form-control" name="sname" #uname="ngModel" [ngModel]="name">
+              </div>
+                <div class="form-group">
+                  <label for="name">Email : </label>
+                  <input type="text" class="form-control" name="semail" #uemail="ngModel" [ngModel]="email">
+                </div>
+                <div class="form-group">
+                    <label for="username">Username : </label>
+                    <input type="text" class="form-control" name="susername" #uusername="ngModel" [ngModel]="username">
+                  </div>
+                  <div class="form-group">
+                      <label for="mobile">Mobile : </label>
+                      <input type="text" class="form-control" name="smobile" #umobile="ngModel" [ngModel]="mobile">
+                    </div>
+                    <div class="form-group">
+                      <label for="password">Password : </label>
+                      <input type="password" class="form-control" name="spassword" #upassword="ngModel" [ngModel]="password">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Confirm Password : </label>
+                        <input type="password" class="form-control" name="scpassword" #ucpassword="ngModel" [ngModel]="cpassword">
+                      </div>
+                
+        </div>
+        <div class="panel-footer"><div class="form-group">
+            <button type="submit" [disabled]="signupForm.pristine" class="btn btn-success waves-effect text-center buttom-style">Sign up</button>
+          <a routerLink="/login"class="signup-style pull-right btn btn-info waves-effect text-center">Login</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</div>

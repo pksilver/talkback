@@ -1,0 +1,21 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" routerLink="/dashboard">LWS Analytics</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a routerLink="/dashboard">Home</a></li>
+        <li><a (click)="OnLogout()" class="logout-style">Logout</a></li>
+        <li><a routerLink="/dashboard/create">Create</a></li>
+        <li><div class="dropdown">
+            <button class="dropbtn">{{ username}}</button>
+            <div class="dropdown-content">
+              <a href="#">Profile</a>
+              <a href="#">Contact Us</a>
+              <a href="#">Settings</a>
+            </div>
+          </div></li>
+      </ul>
+    </div>
+  </nav>
+<router-outlet></router-outlet>
